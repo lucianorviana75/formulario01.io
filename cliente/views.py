@@ -6,4 +6,6 @@ def cliente(request):
     return render(request,'index.html')
 
 def formulario(request):
-    return render(request,'form.html')
+    data ={}
+    data['form'] = ClienteForm()
+    return render(request,'form.html' ,data)

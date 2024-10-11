@@ -20,10 +20,20 @@
        
        <div class="col-8 m-alto pt-3 pb-2 text-center">
         <h1>Formulario</h1>
+        <a href="cliente/" class="btn btn-info">Voltar</a>
        </div>
        <div class="col-8 m-alto pt-4 pb-2 text-center">
-        
+            <form name="form" id="form" method="post">
+                {% csrf_token %} 
+                <!--{{form.as_p}}--> 
+                <div class="form-group mt-4">nome : {{form.nome}}</div>
+                <div class="form-group mt-4">email : {{form.email}}</div>
+                <div class="form-group mt-4">celular : {{form.celular}}</div>
+                <div class="form-group mt-4"> telefone : {{form.telefone_fixo}}</div>
+                <br>
+                <input type="submit" class="btn btn-success" value="salvar">
+            </form>
        </div>
-       
+        
     </body>
 </html>
