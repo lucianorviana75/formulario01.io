@@ -8,24 +8,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     </head>
-    
-    <!-- {{cliente}}Dado literal 
-    {% if cliente == 'cliente01' %}codigo para fazer um comando
-        {{cliente}} autorizado.
-    {% else %}
-        Você não esta autorizado.
-    {% endif %} 
--->       
     <body>
-       
        <div class="col-8 m-alto pt-2 pb-2 text-center">
-        <h1>Estou em Arquivo Raiz</h1>
+            <h1>Estou em Arquivo Raiz</h1>
        </div>
        <div class="col-8 m-alto pt-3 pb-2 text-center">
-        <a href="" class="btn btn-success">Adcionar</a>
+            <a href="/formulario" class="btn btn-success">Adcionar</a>
        </div>
        <div class="col-8 m-alto pt-4 pb-2 text-center">
-        <!--Tabela de dados-->
+        
             <table class="table">
                 <thead class="table-dark">
                     <tr>
@@ -33,29 +24,28 @@
                     <th scope="col">Nome</th>
                     <th scope="col">Sobrenome</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                    </tr>
+                {% for dbs in db %}
+                <tr>
+                    <th>{{dbs.id}}</th>
+                    <td>{{dbs.nome}}</td>
+                    <td>{{dbs.email}}</td>
+                    <td>{{dbs.celular}}</td>
+                    <td>{{dbs.telefone_fixo}}</td>
+                    <td>  
+                        <a href="view/{{db.id}}/" class=" btn btn-dark "> Visualizar </a>
+                        <a href="" class=" btn btn-primary "> Editar </a>
+                        <a href="" class=" btn btn-danger "> Deletar </a>
+                    </td>
+                </tr>
+                {% endfor %}
+                    
                 </tbody>
             </table>
        </div>
-       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      
     </body>
 </html>
