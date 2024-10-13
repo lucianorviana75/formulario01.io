@@ -6,7 +6,7 @@ from cliente.models import Cliente
 def cliente(request):
     data ={}
     data['db'] = Cliente.objects.all()
-    return render(request,'index.html', data)
+    return render(request,'index.html' ,data)
 
 def formulario(request):
     data ={}
