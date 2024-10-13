@@ -22,6 +22,9 @@
         <h1>Formulario</h1>
         <a href="/cliente" class="btn btn-info">Voltar</a>
        </div>
+       <div class="col-8 m-auto pt-4 pb-2 text-center">
+        <div id="result"></div>
+       </div>
        <div class="col-8 m-alto pt-4 pb-2 text-center">
             <form name="form" id="form" action="{% if db %}/update/{{db.id}}/{% else %}/create/{% endif %}" method="post">
                 {% csrf_token %} 
@@ -34,6 +37,7 @@
                 <input type="submit" class="btn btn-success" value="salvar">
             </form>
        </div>
-        
+       {% load static %}
+       <script src="{% static 'javascript.js'%}"></script> 
     </body>
 </html>

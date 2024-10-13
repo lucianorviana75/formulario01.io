@@ -37,4 +37,9 @@ def update(request, pk):
     form = ClienteForm(request.POST or None, instance=data['db'])
     if form.is_valid():
         form.save()
-        return redirect('cliente')    
+        return redirect('cliente')   
+    
+def delete(request, pk):
+    db = Cliente.objects.get(pk=pk)
+    db.delete()
+    return redirect('cliente')     
