@@ -71,7 +71,6 @@ webencodings==0.5.1
 whitenoise==6.7.0
 xlwt==1.3.0
 yarg==0.1.9
-unicorn==6.0.0
-unicorn-2.1.1
+unicorn==2.1.1
 gunicorn==20.1.0
-gunicorn-23.0.0
+gunicorn==23.0.0
