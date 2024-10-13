@@ -15,6 +15,13 @@
        <div class="col-8 m-alto pt-3 pb-2 text-center">
             <a href="/formulario" class="btn btn-success">Adcionar</a>
        </div>
+       <!--Comando de busca-->
+        <div class="col-8 m-alto pt-3 pb-2 text-center">
+            <form>
+                <input type="text" id="search" name="search" class="form-control" placeholder="Buscar" >
+            </form>
+       </div>
+       <!--fim-->
        <div class="col-8 m-alto pt-4 pb-2 text-center">
         
             <table class="table">
@@ -46,7 +53,17 @@
                 </tbody>
             </table>
        </div>
+       <!--Area de Paginação-->
+       <!--<div class="pagination">
+            {% if db.has_previous %}
+                <a href="?page={{db.previous_page_number}}"> < </a>
+            {% endif %}
+            {{db.number}}
+            {% if db.has_next %}
+                <a href="?page={{db.next_page_number}}"> > </a>
+            {% endif %}
+        </div>-->
       {% load static %} 
       <script src="{% static 'javascript.js'%}"></script>
     </body>
-</html>
+</html> 

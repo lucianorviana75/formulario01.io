@@ -1,11 +1,22 @@
 from django.shortcuts import render,redirect
 from cliente.forms import ClienteForm
 from cliente.models import Cliente
+from django.core.paginator import Paginator
 
 # Create your views here.
 def cliente(request):
     data ={}
-    data['db'] = Cliente.objects.all()
+    #Area de busca.
+    search = request.GET.get('search')
+    if search:
+        data['db'] = Cliente.objects.filter(nome__icontains=search)
+    else:
+        data['db'] = Cliente.objects.all()
+    #Area paginação; 
+    #all = Cliente.objects.all()
+    #paginator = Paginator(all, 2)
+    #pages = request.GET.get('page')
+    #data['db'] = paginator.get_page(pages)
     return render(request,'index.html' ,data)
 
 def formulario(request):
