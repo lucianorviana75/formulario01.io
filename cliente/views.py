@@ -23,5 +23,18 @@ def view(request, pk):
     data = {}
     data['db'] = Cliente.objects.get(pk=pk)
     return render(request, 'view.html', data)    
-        
-    
+       
+       
+def edit(request, pk):
+    data = {}
+    data['db'] = Cliente.objects.get(pk=pk)
+    data['form'] = ClienteForm(instance=data['db'])
+    return render(request, 'form.html', data)    
+               
+def update(request, pk):
+    data = {}
+    data['db'] = Cliente.objects.get(pk=pk)
+    form = ClienteForm(request.POST or None, instance=data['db'])
+    if form.is_valid():
+        form.save()
+        return redirect('cliente')    

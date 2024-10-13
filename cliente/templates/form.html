@@ -20,10 +20,10 @@
        
        <div class="col-8 m-alto pt-3 pb-2 text-center">
         <h1>Formulario</h1>
-        <a href="cliente/" class="btn btn-info">Voltar</a>
+        <a href="/cliente" class="btn btn-info">Voltar</a>
        </div>
        <div class="col-8 m-alto pt-4 pb-2 text-center">
-            <form name="form" id="form" action="/create/" method="post">
+            <form name="form" id="form" action="{% if db %}/update/{{db.id}}/{% else %}/create/{% endif %}" method="post">
                 {% csrf_token %} 
                 <!--{{form.as_p}}--> 
                 <div class="form-group mt-4">nome : {{form.nome}}</div>
